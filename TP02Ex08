@@ -1,0 +1,68 @@
+import java.util.Scanner;
+/**
+ *
+ * @Diogo Santos Teixeira e Rian Gustavo Quintanilha de Aquino
+ * 8. Entrar via teclado com doze valores e armazená-los em uma matriz de ordem 3x4. Após a
+digitação dos valores solicitar uma constante multiplicativa, que deverá multiplicar cada
+valor matriz e armazenar o resultado em outra matriz de mesma ordem, nas posições
+correspondentes. Exibir as matrizes na tela, sob a forma matricial, ou seja, linhas por
+colunas.
+ */
+public class TP02Ex08 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int[][] matriz = new int[3][4];
+        int[][] calculada = new int[3][4];
+        Scanner scan= new Scanner(System.in); 
+        int num, constante;//declaração 
+        
+        //armazenamento
+        for(int a = 0; a<3;a++)
+          {
+              for(int j = 0; j<4;j++)
+              {
+                System.out.println("Digite o número da linha " +(a+1) +" e da coluna " +(j+1));
+                num = scan.nextInt();
+                matriz[a][j] = num;
+              }
+          }
+        
+        //entrada
+         System.out.println("Digite a constante multiplicativa: ");
+         constante = scan.nextInt();
+        
+        //processamento
+        for(int a = 0; a<3;a++)
+          {
+              for(int j = 0; j<4;j++)
+              {
+                calculada[a][j] = (matriz[a][j] * constante);
+              }
+          }
+        
+        //saida
+        System.out.println("A matriz com os valores armazenados é: ");
+        for(int a = 0; a<3;a++)
+          {
+              for(int j = 0; j<4;j++)
+              {
+                 System.out.print(" | " +matriz[a][j] +" | ");
+              }
+              System.out.println(" "); 
+          }System.out.println(" "); 
+        
+        System.out.println("A matriz com os valores multiplicados é: ");
+        for(int a = 0; a<3;a++)
+          {
+              for(int j = 0; j<4;j++)
+              {
+                 System.out.print(" | " +calculada[a][j] +" | ");
+              }
+              System.out.println(" "); 
+          }
+    }
+    
+}

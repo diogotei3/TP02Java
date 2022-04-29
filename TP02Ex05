@@ -1,0 +1,38 @@
+import java.util.Scanner;
+/**
+ *
+ * @Diogo Santos Teixeira e Rian Gustavo Quintanilha de Aquino
+ * 5. Armazenar seis valores em uma matriz de ordem 3x2. Apresentar os valores na tela.
+ */
+public class TP02Ex05 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int[][] matriz = new int[3][2];
+        Scanner scan= new Scanner(System.in);
+        
+       for(int a = 0; a<3;a++)
+          {
+              for(int j = 0; j<2;j++)
+              {
+                System.out.println("Digite o número da linha " +(a+1) +" e da coluna " +(j+1));
+                int num= scan.nextInt();
+                matriz[a][j] = num;
+              }
+          }
+       
+       //saida
+       System.out.println(" "); 
+       System.out.println("Matriz: ");
+       for(int a = 0; a<3;a++)
+          {
+              for(int j = 0; j<2;j++)
+              {
+                System.out.print(" | " +matriz[a][j] +" | ");
+              }
+                 System.out.println(" "); 
+          }
+    }
+}

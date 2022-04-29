@@ -1,0 +1,114 @@
+import java.util.Scanner;
+/**
+ *
+ * @Diogo Santos Teixeira e Rian Gustavo Quintanilha de Aquino
+ * Entrar com uma matriz de ordem MxM, onde a ordem também será escolhida pelo usuário,
+sendo que no máximo será de ordem 10 e quadrática. Após a digitação dos elementos,calcular e exibir a matriz inversa. Exibir as matrizes na tela, sob a forma matricial (linhas x
+colunas).
+ */
+public class TP02Ex10 {
+
+    /**
+     * @param args the command line arguments
+     * 
+     */
+    public static void main(String[] args) {
+        Scanner scan= new Scanner(System.in); 
+        int marcador=0,M,num; 
+        
+        do {
+        System.out.println("Digite o valor M para o tamanho da matriz quadrática: ");
+        M = scan.nextInt();
+        if(M>0 && M<11) marcador=1;
+        else System.out.println("Tamanho inválido! Tente novamente: ");
+        }while(marcador!=1);
+        
+        int[][] matriz = new int[M][M];
+        for(int a = 0; a<M;a++)
+          {
+              for(int j = 0; j<M;j++)
+              {
+                System.out.println("Digite o número da linha " +(a+1) +" e da coluna " +(j+1));
+                num = scan.nextInt();
+                matriz[a][j] = num;
+              }
+          }
+        
+        System.out.println("A matriz com os valores armazenados é: ");
+        for(int a = 0; a<M;a++)
+          {
+              for(int j = 0; j<M;j++)
+              {
+                 System.out.print(" | " +matriz[a][j] +" | ");
+              }
+              System.out.println(" "); 
+          }System.out.println(" ");
+          
+         System.out.println("A matriz inversa com os valores armazenados é: ");
+        for(int a = 0; a<M;a++)
+          {
+              for(int j = 0; j<M;j++)
+              {
+                 System.out.print(" | " +matriz[j][a] +" | ");
+              }
+              System.out.println(" "); 
+          }System.out.println(" "); 
+}
+}
+import java.util.Scanner;
+/**
+ *
+ * @Diogo Santos Teixeira e Rian Gustavo Quintanilha de Aquino
+ * Entrar com uma matriz de ordem MxM, onde a ordem também será escolhida pelo usuário,
+sendo que no máximo será de ordem 10 e quadrática. Após a digitação dos elementos,calcular e exibir a matriz inversa. Exibir as matrizes na tela, sob a forma matricial (linhas x
+colunas).
+ */
+public class TP02Ex10 {
+
+    /**
+     * @param args the command line arguments
+     * 
+     */
+    public static void main(String[] args) {
+        Scanner scan= new Scanner(System.in); 
+        int marcador=0,M,num; 
+        
+        do {
+        System.out.println("Digite o valor M para o tamanho da matriz quadrática: ");
+        M = scan.nextInt();
+        if(M>0 && M<11) marcador=1;
+        else System.out.println("Tamanho inválido! Tente novamente: ");
+        }while(marcador!=1);
+        
+        int[][] matriz = new int[M][M];
+        for(int a = 0; a<M;a++)
+          {
+              for(int j = 0; j<M;j++)
+              {
+                System.out.println("Digite o número da linha " +(a+1) +" e da coluna " +(j+1));
+                num = scan.nextInt();
+                matriz[a][j] = num;
+              }
+          }
+        
+        System.out.println("A matriz com os valores armazenados é: ");
+        for(int a = 0; a<M;a++)
+          {
+              for(int j = 0; j<M;j++)
+              {
+                 System.out.print(" | " +matriz[a][j] +" | ");
+              }
+              System.out.println(" "); 
+          }System.out.println(" ");
+          
+         System.out.println("A matriz inversa com os valores armazenados é: ");
+        for(int a = 0; a<M;a++)
+          {
+              for(int j = 0; j<M;j++)
+              {
+                 System.out.print(" | " +matriz[j][a] +" | ");
+              }
+              System.out.println(" "); 
+          }System.out.println(" "); 
+}
+}

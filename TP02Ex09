@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+/**
+ *
+ * @author Diogo Santos Teixeira e Rian Gustavo Quintanilha de Aquino
+ * 
+ * Entrar com uma matriz de ordem MxN, onde a ordem também será escolhida pelo usuário,
+    sendo que no máximo 10x10. A matriz não precisa ser quadrática. Após a digitação dos
+    elementos, calcular e exibir a matriz transposta.
+ */
+public class TP02Ex09 {
+    public static void main(String[] args) {
+        System.out.println("Digite a ordem da matriz NxM (Máximo de 10x10): ");
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("");
+        
+        System.out.print("N: ");
+        int n = scan.nextInt();
+        
+        while(n > 10 || n < 1) {
+            System.out.print("Valor inválido, digite um número positivo menor ou igual a 10: ");
+            n = scan.nextInt();
+        }
+        
+        System.out.print("M: ");
+        int m = scan.nextInt();
+        
+        while(m > 10 || m < 1) {
+            System.out.print("Valor inválido, digite um número positivo menor ou igual a 10: ");
+            m = scan.nextInt();
+        }
+        
+        for(int i = 0; i < n; i++) {
+            System.out.println("");
+            for(int j = 0; j < m; j++) {
+                System.out.printf("%-10s", "|" +(i + 1) + "x" + (j + 1) + "|");
+            }
+        }
+        
+        System.out.println("");
+    }
+}

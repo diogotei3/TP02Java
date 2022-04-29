@@ -1,0 +1,31 @@
+
+package com.mycompany.tp02ex01;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Diogo Santos Teixeira e Rian Gustavo Quintanilha de Aquino
+ * 
+ * Entrar com dois valores via teclado, onde o segundo valor deverá ser maior que o primeiro.
+Caso contrário solicitar novamente apenas o segundo valor.
+ */
+public class TP02Ex01 {
+
+    public static void main(String[] args) {
+        System.out.print("Digite um valor: ");
+        Scanner scan = new Scanner(System.in);
+        
+        int a = scan.nextInt();
+        
+        System.out.print("Digite um valor maior que o primeiro: ");
+        int b = scan.nextInt();
+        System.out.print("\n");
+        
+        while (b <= a) {            
+            System.out.print("Esse valor não é maior que o primeiro, tente novamente: ");
+            b = scan.nextInt();
+        }
+        
+        System.out.println("Sucesso! " + b + " é maior que " + a);
+    }
+}

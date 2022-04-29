@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+/**
+ *
+ * @author Diogo Santos Teixeira e Rian Gustavo Quintanilha de Aquino
+ * 
+ * Entrar via teclado com doze valores e armazená-los em uma matriz de ordem 3x4. Após a
+    digitação dos valores solicitar uma constante multiplicativa, que deverá multiplicar cada
+    valor matriz e armazenar o resultado na própria matriz, nas posições correspondentes.
+ */
+public class TP02Ex07 {
+    public static void main(String[] args) {
+        int[][] matriz = new int[3][4];
+        Scanner scan= new Scanner(System.in);
+        int num, constante;//declaração
+
+        //armazenamento
+        for(int a = 0; a<3;a++) {
+            for(int j = 0; j<4;j++) {
+                System.out.print("Digite o número da linha " +(a+1) +" e da coluna " +(j+1) + ": ");
+                num = scan.nextInt();
+                matriz[a][j] = num;
+            }
+        }
+
+        //entrada
+        System.out.print("Digite a constante multiplicativa: ");
+        constante = scan.nextInt();
+
+        //processamento
+        for(int a = 0; a<3;a++) {
+            for(int j = 0; j<4;j++) {
+                matriz[a][j] = (matriz[a][j] * constante);
+            }
+        }
+
+        System.out.println("");
+        
+        //saida
+        System.out.println("A matriz com os valores armazenados é: ");
+        for(int a = 0; a<3;a++) {
+            for(int j = 0; j<4;j++) {
+                System.out.printf("%-10s", " | " + matriz[a][j] +" | ");
+            }
+            System.out.println("");
+        }
+    }
+}

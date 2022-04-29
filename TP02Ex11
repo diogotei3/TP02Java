@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+/**
+ *
+ * @author Diogo Santos Teixeira e Rian Gustavo Quintanilha de Aquino
+ * 
+ * Entrar com uma matriz de ordem MxM, onde a ordem também será escolhida pelo usuário,
+sendo que no máximo será de ordem 10 e quadrática. Após a digitação dos elementos,
+calcular e exibir determinante da matriz.
+ */
+public class TP02Ex11 {
+    
+    private int DET;
+    
+public static void main(String[] args) {
+	new TP02Ex11().executar();
+}
+
+private void executar() {
+	Scanner scan = new Scanner(System.in);
+	
+	System.out.print("Digite a ordem da matriz quadrática: ");
+	int ord = scan.nextInt();
+	
+	while(ord < 1 || ord > 10) {
+	    System.out.print("A ordem tem que ser de 1 até 10, digite novamente: ");
+	    ord = scan.nextInt();
+	}
+	
+	double mat[][] = new double[ord][ord];
+	for (int i = 0; i < mat.length; i++) {
+		for (int j = 0; j < mat[i].length; j++) {
+			System.out.printf("Informe o %dº valor da %dª linha: ", j + 1, i + 1);
+			mat[i][j] = scan.nextDouble();
+		}
+	}
+	scan.close();
+	System.out.println("Determinante: " + calcularMatrizDeterminante(mat, mat.length));
+}
+
+
+public double calcularMatrizDeterminante(double matriz[][], int ordem) {
+	if (ordem == 1)
+		return (matriz[0][0]);
+	if (ordem == 2)
+		return (matriz[0][0] * matriz[1][1] - matriz[1][0] * matriz[0][1]);
+	else {
+		double[][] matrizAuxiliar = new double[ordem - 1][ordem - 1];
+		int colunaAuxiliar = 0;
+		for (int controle = 0; controle < ordem; controle++) {
+			for (int linha = 1; linha < ordem; linha++) {
+				for (int coluna = 0; coluna < ordem; coluna++)
+					if (controle != coluna)
+						matrizAuxiliar[linha - 1][colunaAuxiliar++] = (int) matriz[linha][coluna];
+				colunaAuxiliar = 0;
+			}
+			if (matriz[0][controle] != 0)
+				this.DET += (int) Math.pow((-1), controle) * matriz[0][controle] * calcularMatrizDeterminante(matrizAuxiliar, ordem - 1);
+		}
+	}
+	return (this.DET);
+}
+}

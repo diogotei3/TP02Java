@@ -1,0 +1,33 @@
+import java.util.Scanner;
+/**
+ *
+ * @Diogo Santos Teixeira e Rian Gustavo Quintanilha de Aquino
+ * Entrar via teclado com dez valores positivos. Consistir a digitação e enviar mensagem de
+    erro, se necessário. Após a digitação, exibir:
+    a. O maior valor;
+    b. A soma dos valores;
+    c. A média aritmética dos valores.
+ */
+public class TP02Ex02 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner scan= new Scanner(System.in);
+        double soma=0;
+        double maior=0;
+        
+        for(int i=0; i<10; i++)
+        {
+         System.out.println("Digite o "+ (i+1) +" número:");
+         int num= scan.nextInt();
+         soma=soma+num;
+         if(maior<num) maior=num;
+        }
+        System.out.println("a. O maior número é: " +maior);
+        System.out.println("b. A soma dos valores é: " +soma);
+        System.out.println("a. A média aritmética dos valores é: " +soma/10);
+    }
+    
+}

@@ -1,0 +1,82 @@
+import java.util.Scanner;
+
+/**
+ *
+ * @author Diogo Santos Teixeira e Rian Gustavo Quintanilha de Aquino
+ * 
+ * Entrar via teclado com “N” valores quaisquer. O valor “N” (que representa a quantidade de
+    números) será digitado, deverá ser positivo, porém menor que vinte. Caso a quantidade não
+    satisfaça a restrição, enviar mensagem de erro e solicitar o valor novamente. Após a
+    digitação dos “N” valores, exibir:
+    a. O maior valor;
+    b. O menor valor;
+    c. A soma dos valores;
+    d. A média aritmética dos valores;
+    e. A porcentagem de valores que são positivos;
+    f. A porcentagem de valores negativos;
+ */
+public class TP02Ex03 {
+    public static void main(String[] args) {
+        System.out.println("Digite uma sequência de valores, para exibir algumas informações: ");
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Quantos valores serão inputados? ");
+        int n = scan.nextInt();
+        
+        while(n < 0 || n > 20) {
+            System.out.print("É preciso ter de 1 a 20 valores! Digite novamente: ");
+            n = scan.nextInt();
+        }
+        
+        int[] valores = new int[n];
+        System.out.println("");
+        
+        int max = 0, min = 0, soma = 0, positivos = 0, negativos = 0;
+        double ma = 0.0;
+        
+        for(int i = 0; i < n; i++) {
+            System.out.print("Valor Nº" + (i + 1) + ": ");
+            valores[i] = scan.nextInt();
+            
+            // Valor máximo
+            if(valores[i] > max) {
+                max = valores[i];
+            }
+            
+            // Valor mínimo
+            if(min != 0) {
+                if(valores[i] < max) {
+                    min = valores[i];
+                }
+            } else {
+                min = valores[i];
+            }
+            
+            // Soma de valores
+            soma += valores[i];
+            
+            // Porcentagem de positivos e negativos
+            if (valores[i] >= 0) {
+                positivos++;
+            } else {
+                negativos++;
+            }
+        }
+        
+        // Média Aritimética
+        ma = soma/n;
+        
+        // Porcentagens
+        double perPositivos = positivos / n * 100;
+        double perNegativos = negativos / n * 100;
+        
+        System.out.println("");
+       
+        System.out.println("Maior valor.....: " + max);
+        System.out.println("Menor valor.....: " + min);
+        System.out.println("Soma dos valores: " + soma);
+        System.out.println("Média Aritmética: " + ma);
+        System.out.println("Perc. Positivos.: " + perPositivos + "%");
+        System.out.println("Perc. Negativos.: " + perNegativos + "%");
+    }
+}
